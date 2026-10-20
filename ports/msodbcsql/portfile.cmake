@@ -5,8 +5,8 @@ if (EXISTS ${ODBC_EXTRACT_DIR})
 endif ()
 
 if(VCPKG_TARGET_IS_WINDOWS)
-    set(DIST_URL "https://download.microsoft.com/download/7bf9fad4-0f21-486d-a750-fc990ded5624/amd64/1033/msodbcsql.msi")
-    set(SHA512 9BA470D95673EEB7A5E7D3759AB86410556E77CC24B018CCB8ADD044D7086ADE4AE762B588440E1C0E31E6ED8642C36EF75BF14D24F0C75C3D88AFFD4C862F02)
+    set(DIST_URL "https://download.microsoft.com/download/d624e1c6-293b-4d6f-91b8-6e515a5d6a77/amd64/1033/msodbcsql.msi")
+    set(SHA512 6998350c7cc245cf6ef7d408fbc83119871aea7b90c6e095ace8cc3512c7e60a78d48ebc550b31a041f2a4fe3a8c5693fe07c4546b5e3264fc2ed590203d82e1)
     set(ODBC_SDK_ROOT_DIR "${ODBC_EXTRACT_DIR}\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\180\\SDK")
     vcpkg_download_distfile(
         MSI_LOC
