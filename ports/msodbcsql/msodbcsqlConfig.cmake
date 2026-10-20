@@ -1,12 +1,13 @@
-add_library(msodbcsql SHARED IMPORTED)
+
 
 if(WIN32)
+    add_library(msodbcsql STATIC IMPORTED GLOBAL)
     set_target_properties(msodbcsql PROPERTIES
         INTERFACE_INCLUDE_DIRECTORIES "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include"
-        INTERFACE_LINK_DIRECTORIES "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/lib"
-        INTERFACE_LINK_LIBRARIES "msodbcsql18"
+        IMPORTED_LOCATION "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/lib/msodbcsql18.lib"
     )
 elseif (APPLE)
+    add_library(msodbcsql SHARED IMPORTED)
     set_target_properties(msodbcsql PROPERTIES
         INTERFACE_INCLUDE_DIRECTORIES "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include"
         INTERFACE_LINK_DIRECTORIES "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/lib"
